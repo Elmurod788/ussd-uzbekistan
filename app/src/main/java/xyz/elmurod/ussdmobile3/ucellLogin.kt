@@ -6,6 +6,8 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
@@ -13,25 +15,12 @@ class ucellLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ucell_login)
-
+        val btn_call_center_Ucell = findViewById<Button>(R.id.btn_callCenter_Ucell)
+        btn_call_center_Ucell.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:8123")
+            startActivity(Intent.createChooser(intent, ""))
     }
-    private fun startPhoneActionIntent(phoneCode: String) {
-        val requestCode = 1
-        val phoneCode = "8123"
-        val intent = Intent(Intent.ACTION_CALL, Uri.parse("$phoneCode"))
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE)
-                != PackageManager.PERMISSION_GRANTED
-            ) {
-                ActivityCompat.requestPermissions(
-                    this,
-                    arrayOf(android.Manifest.permission.CALL_PHONE),
-                    requestCode)
-            } else {
-                startActivity(intent)
-            }
-        } else {
-            startActivity(intent)
-        }
+
 }}

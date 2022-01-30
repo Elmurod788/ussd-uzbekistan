@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -17,18 +18,19 @@ import java.util.jar.Manifest
 class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
-        menuInflater.inflate(R.menu.main_menu,menu)
+        menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.nav_share -> Toast.makeText(this, "share", Toast.LENGTH_SHORT).show()
             R.id.nav_rate -> Toast.makeText(this, "rate", Toast.LENGTH_SHORT).show()
             R.id.nav_connect -> Toast.makeText(this, "connect us", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         val beeline = findViewById<Button>(R.id.beeline)
         val ucell = findViewById<Button>(R.id.ucell)
         val uzmobile = findViewById<Button>(R.id.uzmobile)
+        val btn_main = findViewById<Button>(R.id.btn_main)
+        val btn_cabinet = findViewById<Button>(R.id.btn_cabinet)
+        val btn_callCenter = findViewById<Button>(R.id.btn_callCenter)
         mobiuz.setOnClickListener {
             val intent = Intent(this, mobiuzLogin::class.java)
             startActivity(intent)
@@ -52,9 +57,20 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, uzmobileLogin::class.java)
             startActivity(intent)
         }
-    }
-
+        btn_main.setOnClickListener {
+            Toast.makeText(this, "You are in the main screen", Toast.LENGTH_SHORT).show()
         }
+        btn_cabinet.setOnClickListener {
+            Toast.makeText(this, "Choose the company", Toast.LENGTH_SHORT).show()
+        }
+        btn_callCenter.setOnClickListener {
+            Toast.makeText(this, "Choose the company", Toast.LENGTH_SHORT).show()
+        }
+
+
+
+    }
+}
 
 
 

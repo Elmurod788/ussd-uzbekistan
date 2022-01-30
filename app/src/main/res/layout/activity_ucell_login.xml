@@ -32,9 +32,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="0dp"
-            android:onClick="startPhoneActionIntent"
-            android:background="@drawable/ic_call" />
+            android:background="@drawable/ic_call"
+            android:onClick="call"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_callCenter_Ucell"

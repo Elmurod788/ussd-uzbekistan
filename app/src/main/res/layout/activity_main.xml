@@ -77,4 +77,80 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ucell" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_callCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/ic_call"
+            android:onClick="call"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_callCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_callCenter"
+            android:layout_alignEnd="@+id/btn_callCenter"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:text="Call Center"
+            app:layout_constraintEnd_toEndOf="@+id/btn_callCenter"
+            app:layout_constraintStart_toStartOf="@+id/btn_callCenter"
+            app:layout_constraintTop_toBottomOf="@+id/btn_callCenter" />
+        <Button
+            android:id="@+id/btn_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_main"
+            android:layout_alignEnd="@+id/btn_main"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:text="Main"
+            app:layout_constraintEnd_toEndOf="@+id/btn_main"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@+id/btn_main"
+            app:layout_constraintTop_toBottomOf="@+id/btn_main" />
+
+        <Button
+            android:id="@+id/btn_cabinet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_cabinet"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_cabinet_Ucell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_cabinet"
+            android:layout_alignEnd="@+id/btn_cabinet"
+            android:layout_alignParentStart="true"
+
+            android:text="Cabinet"
+            app:layout_constraintEnd_toEndOf="@+id/btn_cabinet"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@+id/btn_cabinet"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cabinet" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
