@@ -19,8 +19,13 @@ class ucellLogin : AppCompatActivity() {
         btn_call_center_Ucell.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL)
             intent.data = Uri.parse("tel:8123")
-            startActivity(Intent.createChooser(intent, ""))
+            startActivity(Intent.createChooser(intent, ""))}
+        val btn_cabinet_Ucell =findViewById<Button>(R.id.btn_cabinet_Ucell)
+        btn_cabinet_Ucell.setOnClickListener{
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://my.ucell.uz/Account/Login?ReturnUrl=%2F"))
+            startActivity(i)
+        }
     }
 
 
-}}
+}
